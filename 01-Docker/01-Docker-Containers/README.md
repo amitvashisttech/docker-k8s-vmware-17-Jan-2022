@@ -104,3 +104,55 @@
  1145  curl 172.17.0.8:80
  1146  curl 172.17.0.9:80
 ```
+```
+1170  ls
+ 1171  docker ps
+ 1172  ls
+ 1173  cd 01-Docker/
+ 1174  s
+ 1175  ls
+ 1176  cd 02-Dockerfile/
+ 1177  ls
+ 1178  cd apache/
+ 1179  ls
+ 1180  cp -rf v2 v3
+ 1181  ls
+ 1182  cd v3/
+ 1183  ls
+ 1184  vim index.html
+ 1185  ls
+ 1186  vim Dockerfile
+ 1187  ls
+ 1188  docker build -t myapache:v3 .
+ 1189  docker images
+ 1190  docker run -d --name test-apache-8 myapache:v3
+ 1191  docker ps
+ 1192  curl 172.17.0.9:80
+ 1193  ip addr
+ 1194  ls
+ 1195  docker ps
+ 1196  docker run -d --name test-apache-9 -p 8080:80  myapache:v3
+ 1197  docker ps
+ 1198  netstat -tulnp
+ 1199  systemctl status docker
+ 1200  docker run -d --name test-apache-10 -p 8080:80  myapache:v3
+ 1201  docker run -d --name test-apache-11 -p 8081:80  myapache:v3
+ 1202  docker ps
+ 1203  cat Dockerfile
+ 1204  docker run -d --name test-apache-12 -P  myapache:v3
+ 1205  docker ps
+ 1206  docker run -d --name test-apache-13 -P  myapache:v1
+ 1207  docker ps
+ 1208  cat Dockerfile
+ 1209  docker run -d --name test-apache-14 -P  myapache:v3
+ 1210  docker ps
+ 1211  docker run -d --name test-apache-15 -p 8083:80  myapache:v1
+ 1212  docker ps
+ 1213  ls
+ 1214  cd ..
+ 1215  ls
+ 1216  cd ..
+ 1217  ls
+ 1218  cd ..
+ 1219  ls
+```
