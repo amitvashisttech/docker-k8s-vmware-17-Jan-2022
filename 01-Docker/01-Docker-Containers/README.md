@@ -156,3 +156,153 @@
  1218  cd ..
  1219  ls
 ```
+
+
+# Docker Network
+```
+1229  docker ps
+ 1230  docker network ls
+ 1231  docker network  inspect 4781ed84cc3f
+ 1232  docker ps
+ 1233  docker ps -q
+ 1234  docker kill $(docker ps -q)
+ 1235  docker ps
+ 1236  docker rm $(docker ps -qa)
+ 1237  docker network  inspect 4781ed84cc3f
+ 1238  docker ps
+ 1239  docker network  ls
+ 1240  docker network create my-net
+ 1241  docker network  ls
+ 1242  docker network  inspect my-net
+ 1243  ip adr
+ 1244  ip addr
+ 1245  docker network rm my-net
+ 1246  docker network  ls
+ 1247  docker network create --help
+ 1248  docker network create -d bridge --subnet=172.28.0.0/16 --ip-range=172.28.5.0/24 --gateway=172.28.5.254 mybr0
+ 1249  docker network  ls
+ 1250  docker network inspect mybr0
+ 1251  ip addr
+ 1252  docker run -d --name test-apache-1 -P   myapache:v3
+ 1253  docker ps
+ 1254  docker inspect test-apache-1
+ 1255  docker run -d --name test-apache-2 --network mybr0  -P   myapache:v3
+ 1256  docker run -d --name test-apache-3 --network mybr0  -P   myapache:v3
+ 1257  docker ps
+ 1258  docker inspect test-apache-3
+ 1259  docker ps
+ 1260  curl localhost:32772
+ 1261  docker network ls
+ 1262  docker run -itd --name test-none-1 --network none busybox
+ 1263  docker ps
+ 1264  docker exec -it test-none-1 -- ip addr
+ 1265  docker exec -it test-none-1 ip addr
+ 1266  docker run -itd --name test-bridge busybox
+ 1267  docker ps
+ 1268  docker exec -it test-none-1 ip addr
+ 1269  docker exec -it test-bridge ip addr
+ 1270  ip addr
+ 1271  docker exec -it test-none-1 ip addr
+ 1272  docker exec -it test-bridge ip addr
+ 1273  docker run -itd --name test-host-1 --network host busybox
+ 1274  docker ps
+ 1275  docker exec -it test-host-1 ip addr
+ 1276  docker ps
+ 1277  netstat
+ 1278  netstat -tulnp
+ 1279  netstat -tulnp | grep -v rpc
+ 1280  docker run -d --name test-host-3 --network host myapache:v3
+ 1281  docker ps
+ 1282  netstat -tulnp | grep -v rpc
+```
+
+# Docker Volumes 
+```
+ 1287  docker ps
+ 1288  docker kill $(docker ps -q)
+ 1289  docker rm  $(docker ps -aq)
+ 1290  docker volume ls
+ 1291  docker volume rm ca1b1721d485fc460d48e907ac205e72824343c418846a2cd1201e9183df4263
+ 1292  docker volume ls
+ 1293  docker volume create myvol
+ 1294  docker volume ls
+ 1295  docker volume inspect myvol
+ 1296  cd "/var/lib/docker/volumes/myvol/_data"
+ 1297  s
+ 1298  ls
+ 1299  cd
+ 1300  ls
+ 1301  cd -
+ 1302  ls
+ 1303  cd ../../../
+ 1304  ls
+ 1305  cd ..
+ 1306  ls
+ 1307  cd
+ 1308  cd docker-k8s-vmware-17-Jan-2022/
+ 1309  ls
+ 1310  cd 01-Docker/
+ 1311  ls
+ 1312  docker run -it --name volume-test-1 -v myvol:/amit busybox
+ 1313  docker ps
+ 1314  docker ps -a
+ 1315  docker rm volume-test-1
+ 1316  docker ps -a
+ 1317  docker volume ls
+ 1318  docker run -it --name volume-test-2 -v myvol:/vmware busybox
+ 1319  docker ps
+ 1320  docker run -it --name volume-test-3 -v myvol:/vmware busybox
+ 1321  docker ps
+ 1322  cd /var/lib/docker
+ 1323  ls
+ 1324  cd volumes/
+ 1325  ls
+ 1326  cd myvol/_data/
+ 1327  ls
+ 1328  cat hello.txt
+ 1329  pwd >> hello.txt ; date >> hello.txt ; hostname -f >> hello.txt
+ 1330  cat hello.txt
+ 1331  cd -
+ 1332  ls
+ 1333  docker ps
+ 1334  docker attach volume-test-3
+ 1335  ls
+ 1336  cd
+ 1337  docker run -d --name test-apache1 -v /var/www/html/amit -P myapache:v3
+ 1338  docker ps
+ 1339  docker inspect test-apache1
+ 1340  docker ps
+ 1341  docker volume ls
+ 1342  cd /var/lib/docker/volumes/7b9ac738c3b9e04719b94efe13c8bd4c2826bb1107b573567deb4661fdc9dd66/_data/
+ 1343  ls
+ 1344  echo "Hello World" > hello.txt
+ 1345  ;s
+ 1346  cd ..
+ 1347  s
+ 1348  ls
+ 1349  cd
+ 1350  ls
+ 1351  cd docker-k8s-vmware-17-Jan-2022/
+ 1352  s
+ 1353  ls
+ 1354  docker run -d --name test-apache1 /root/docker-k8s-vmware-17-Jan-2022:/var/www/html/amit:ro -P myapache:v3
+ 1355  docker run -d --name test-apache3 -v /root/docker-k8s-vmware-17-Jan-2022:/var/www/html/amit:ro -P myapache:v3
+ 1356  docker ps
+ 1357  docker run -d --name test-apache4 -v /root/docker-k8s-vmware-17-Jan-2022:/var/www/html/amit:ro busybox
+ 1358  ls
+ 1359  docker run -it --name test-apache5 -v /root/docker-k8s-vmware-17-Jan-2022:/var/www/html/amit:ro busybox
+ 1360  ls
+ 1361  history
+ 1362  docker kill $(docker ps -qa)
+ 1363  docker rm $(docker ps -qa)
+ 1364  docker volume ls
+ 1365  docker volume ls -q
+ 1366  docker volume rm $(docker volume ls -q  )
+ 1367  docker volume ls
+ 1368  ls
+ 1369  history
+ 1370  ls
+ 1371  vim 01-Docker/01-Docker-Containers/README.md
+ 1372  cat 01-Docker/01-Docker-Containers/README.md
+
+```
