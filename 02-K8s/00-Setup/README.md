@@ -8,13 +8,13 @@
 ## First clone this repository on your windows machine.
 
 ```
-git clone https://github.com/amitvashisttech/docker-kubernetes-ericsson-20-Dec-2021.git
+git clone https://github.com/amitvashisttech/docker-k8s-vmware-17-Jan-2022.git
 ``` 
 
 ## Now provision three virtual machines with following commands:
 
 ```
-cd docker-kubernetes-ericsson-20-Dec-2021/02-K8s/00-Setup
+cd docker-k8s-vmware-17-Jan-2022/02-K8s/00-Setup
 vagrant.exe up
 
 
@@ -36,8 +36,8 @@ Note :
 ```
 vagrant.exe ssh master
 sudo su - 
-git clone https://github.com/amitvashisttech/docker-kubernetes-ericsson-20-Dec-2021.git
-cd docker-kubernetes-ericsson-20-Dec-2021/02-K8s/00-Setup
+git clone https://github.com/amitvashisttech/docker-k8s-vmware-17-Jan-2022.git
+cd docker-k8s-vmware-17-Jan-2022/02-K8s/00-Setup
 sh install-k8s-master-node.sh
 
 ---
@@ -76,7 +76,7 @@ k8s-master   Ready    master   5m6s   v1.18.0
 ```
 vagrant.exe ssh worker1
 sudo su - 
-git clone To https://github.com/amitvashisttech/docker-kubernetes-ericsson-20-Dec-2021.git
+git clone https://github.com/amitvashisttech/docker-k8s-vmware-17-Jan-2022.git
 cd docker-kubernetes-ericsson-04-Oct-2021/02-K8s/00-Setup
 sh install-k8s-worker-node.sh
 ```
