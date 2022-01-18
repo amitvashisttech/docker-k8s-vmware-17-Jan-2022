@@ -37,7 +37,7 @@ Note :
 vagrant.exe ssh master
 sudo su - 
 git clone https://github.com/amitvashisttech/docker-kubernetes-ericsson-20-Dec-2021.git
-cd docker-kubernetes-ericsson-20-Dec-2021/02-Kubernetes/00-Setup
+cd docker-kubernetes-ericsson-20-Dec-2021/02-K8s/00-Setup
 sh install-k8s-master-node.sh
 
 ---
@@ -74,7 +74,7 @@ k8s-master   Ready    master   5m6s   v1.18.0
 ## In parallel Login to both the nodes /workers & clone the repo after that execute install-node.sh. 
 
 ```
-vagrant.exe ssh woker1
+vagrant.exe ssh worker1
 sudo su - 
 git clone To https://github.com/amitvashisttech/docker-kubernetes-ericsson-20-Dec-2021.git
 cd docker-kubernetes-ericsson-04-Oct-2021/02-K8s/00-Setup
