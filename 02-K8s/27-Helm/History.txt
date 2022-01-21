@@ -1,0 +1,24 @@
+```
+1927  cd 28-Helm/
+ 1928  ls
+ 1929  cat README.md
+ 1930  cd
+ 1931  wget https://get.helm.sh/helm-v3.4.2-linux-amd64.tar.gz
+ 1932  tar -zxvf helm-v3.4.2-linux-amd64.tar.gz
+ 1933  sudo mv linux-amd64/helm /usr/local/bin/helm
+ 1934  ls
+ 1935  cat k8s-paypal-27-Sept-2021/02-K8s/28-Helm/helm-rbac.yaml
+ 1936  kubectl  apply -f k8s-paypal-27-Sept-2021/02-K8s/28-Helm/helm-rbac.yaml
+ 1937  helm version
+ 1940  helm repo add azure-marketplace https://marketplace.azurecr.io/helm/v1/repo
+ 1941  helm repo list
+ 1942  helm search nginx
+ 1944  helm search repo nginx
+ 1946  helm search repo nginx
+ 1947  helm install mynginx azure-marketplace/nginx
+ 1948  kubectl  get nginx
+ 1949  kubectl  get pods
+ 1950  kubectl delete -f k8s-paypal-27-Sept-2021/02-K8s/27-Ingress/
+ 1951  kubectl get deploy,pod,svc
+
+```
